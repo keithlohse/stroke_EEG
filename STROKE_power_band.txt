@@ -1,0 +1,70 @@
+Linear mixed model fit by maximum likelihood . t-tests use Satterthwaite's method [lmerModLmerTest]
+Formula: log(PW + 1) ~ sex + age + days_to_enrollment + lesion_volume +  
+    band * contra * channel_region + (1 + contra | subID) + (1 |      Channels)
+   Data: PEAK_BAND %>% filter(band != "delta")
+Control: lmerControl(optimizer = "bobyqa", optCtrl = list(maxfun = 5e+05))
+
+      AIC       BIC    logLik -2*log(L)  df.resid 
+  -2477.9   -2303.6    1272.0   -2543.9      1420 
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-3.4435 -0.6463  0.0123  0.6625  3.6539 
+
+Random effects:
+ Groups   Name        Variance  Std.Dev. Corr 
+ subID    (Intercept) 0.0090781 0.09528       
+          contra.L    0.0012258 0.03501  -0.07
+ Channels (Intercept) 0.0002534 0.01592       
+ Residual             0.0084270 0.09180       
+Number of obs: 1453, groups:  subID, 60; Channels, 20
+
+Fixed effects:
+                                   Estimate Std. Error         df t value Pr(>|t|)    
+(Intercept)                       3.904e-01  5.674e-02  5.910e+01   6.881 4.26e-09 ***
+sex.L                             1.609e-02  1.946e-02  5.870e+01   0.827 0.411758    
+age                              -1.192e-03  9.168e-04  5.847e+01  -1.301 0.198525    
+days_to_enrollment                1.016e-05  2.072e-05  5.949e+01   0.490 0.625622    
+lesion_volume                    -1.097e-03  5.241e-04  5.840e+01  -2.094 0.040602 *  
+band.L                           -6.043e-02  8.423e-03  1.387e+03  -7.175 1.18e-12 ***
+band.Q                           -7.855e-02  5.659e-03  1.376e+03 -13.880  < 2e-16 ***
+contra.L                          1.220e-02  7.213e-03  1.248e+02   1.691 0.093333 .  
+channel_region.L                  3.040e-02  1.193e-02  2.771e+01   2.548 0.016677 *  
+channel_region.Q                 -5.495e-02  1.114e-02  2.840e+01  -4.932 3.23e-05 ***
+channel_region.C                  8.608e-04  1.019e-02  2.822e+01   0.085 0.933255    
+band.L:contra.L                  -1.263e-02  1.149e-02  1.305e+03  -1.099 0.271889    
+band.Q:contra.L                  -3.897e-03  7.818e-03  1.360e+03  -0.498 0.618265    
+band.L:channel_region.L           2.151e-02  1.617e-02  1.350e+03   1.330 0.183713    
+band.Q:channel_region.L          -4.398e-02  1.130e-02  1.344e+03  -3.891 0.000105 ***
+band.L:channel_region.Q           2.774e-02  1.534e-02  1.355e+03   1.808 0.070851 .  
+band.Q:channel_region.Q          -1.342e-02  1.060e-02  1.348e+03  -1.265 0.206079    
+band.L:channel_region.C           9.597e-04  1.405e-02  1.345e+03   0.068 0.945550    
+band.Q:channel_region.C          -5.135e-03  9.657e-03  1.338e+03  -0.532 0.594999    
+contra.L:channel_region.L         2.264e-02  1.144e-02  1.366e+03   1.979 0.048058 *  
+contra.L:channel_region.Q        -8.830e-03  1.079e-02  1.367e+03  -0.818 0.413297    
+contra.L:channel_region.C         1.263e-02  9.887e-03  1.344e+03   1.278 0.201615    
+band.L:contra.L:channel_region.L -5.514e-02  2.289e-02  1.359e+03  -2.409 0.016135 *  
+band.Q:contra.L:channel_region.L  7.460e-03  1.597e-02  1.342e+03   0.467 0.640444    
+band.L:contra.L:channel_region.Q -3.756e-03  2.173e-02  1.367e+03  -0.173 0.862773    
+band.Q:contra.L:channel_region.Q  2.388e-02  1.497e-02  1.348e+03   1.595 0.110904    
+band.L:contra.L:channel_region.C -1.136e-02  1.994e-02  1.346e+03  -0.570 0.569104    
+band.Q:contra.L:channel_region.C  1.304e-02  1.366e-02  1.335e+03   0.954 0.340026    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+fit warnings:
+Some predictor variables are on very different scales: consider rescaling
+Type III Analysis of Variance Table with Satterthwaite's method
+                           Sum Sq Mean Sq NumDF   DenDF  F value    Pr(>F)    
+sex                        0.0058 0.00576     1   58.70   0.6834  0.411758    
+age                        0.0143 0.01425     1   58.47   1.6914  0.198525    
+days_to_enrollment         0.0020 0.00203     1   59.49   0.2405  0.625622    
+lesion_volume              0.0370 0.03695     1   58.40   4.3852  0.040602 *  
+band                       3.6879 1.84396     2 1376.62 218.8146 < 2.2e-16 ***
+contra                     0.0241 0.02410     1  124.83   2.8595  0.093333 .  
+channel_region             0.4577 0.15255     3   27.68  18.1030  1.06e-06 ***
+band:contra                0.0219 0.01096     2 1328.26   1.3010  0.272604    
+band:channel_region        0.1499 0.02498     6 1345.67   2.9640  0.007044 ** 
+contra:channel_region      0.0879 0.02931     3 1364.19   3.4784  0.015459 *  
+band:contra:channel_region 0.0991 0.01651     6 1350.13   1.9594  0.068446 .  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1

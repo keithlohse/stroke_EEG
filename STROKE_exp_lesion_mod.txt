@@ -1,0 +1,62 @@
+Linear mixed model fit by REML. t-tests use Satterthwaite's method ['lmerModLmerTest']
+Formula: Imp_Exp ~ sex + age + days_to_enrollment + lesion_volume + contra *  
+    channel_region + (1 + contra | subID) + (1 | Channels)
+   Data: STROKE %>% filter(channel_side != "z")
+
+REML criterion at convergence: -75.5
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-4.4679 -0.5538 -0.0387  0.5121  4.9123 
+
+Random effects:
+ Groups   Name        Variance Std.Dev. Corr
+ subID    (Intercept) 0.108222 0.32897      
+          contra.L    0.003942 0.06278  0.26
+ Channels (Intercept) 0.006380 0.07987      
+ Residual             0.039424 0.19855      
+Number of obs: 1200, groups:  subID, 60; Channels, 20
+
+Fixed effects:
+                            Estimate Std. Error         df t value Pr(>|t|)    
+(Intercept)                1.416e+00  1.908e-01  5.646e+01   7.418 6.74e-10 ***
+sex.L                      7.997e-02  6.508e-02  5.498e+01   1.229  0.22434    
+age                       -4.127e-03  3.071e-03  5.504e+01  -1.344  0.18447    
+days_to_enrollment        -2.798e-05  6.905e-05  5.502e+01  -0.405  0.68692    
+lesion_volume              8.926e-04  1.758e-03  5.518e+01   0.508  0.61368    
+contra.L                   2.941e-02  1.235e-02  7.741e+01   2.381  0.01972 *  
+channel_region.L          -5.564e-02  4.610e-02  1.599e+01  -1.207  0.24502    
+channel_region.Q           1.566e-01  4.281e-02  1.599e+01   3.659  0.00212 ** 
+channel_region.C          -5.726e-02  3.923e-02  1.599e+01  -1.459  0.16383    
+contra.L:channel_region.L  4.297e-02  2.002e-02  1.061e+03   2.147  0.03203 *  
+contra.L:channel_region.Q -3.934e-02  1.858e-02  1.061e+03  -2.117  0.03448 *  
+contra.L:channel_region.C -3.594e-03  1.703e-02  1.061e+03  -0.211  0.83293    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+            (Intr) sex.L  age    dys_t_ lsn_vl cntr.L chn_.L chn_.Q chn_.C c.L:_.L c.L:_.Q
+sex.L       -0.042                                                                        
+age         -0.946 -0.015                                                                 
+dys_t_nrllm -0.099 -0.133  0.022                                                          
+lesion_volm -0.253 -0.084  0.108 -0.198                                                   
+contra.L     0.036  0.000  0.002  0.002 -0.004                                            
+chnnl_rgn.L  0.054  0.000  0.000  0.000  0.000  0.000                                     
+chnnl_rgn.Q  0.022  0.000  0.000  0.000  0.000  0.000  0.415                              
+chnnl_rgn.C  0.007  0.000  0.000  0.000  0.000  0.000  0.122  0.293                       
+cntr.L:c_.L  0.000  0.000  0.000  0.000  0.000  0.362  0.000  0.000  0.000                
+cntr.L:c_.Q  0.000  0.000  0.000  0.000  0.000  0.150  0.000  0.000  0.000  0.415         
+cntr.L:c_.C  0.000  0.000  0.000  0.000  0.000  0.044  0.000  0.000  0.000  0.122   0.293 
+fit warnings:
+Some predictor variables are on very different scales: consider rescaling
+Type III Analysis of Variance Table with Satterthwaite's method
+                       Sum Sq Mean Sq NumDF   DenDF F value    Pr(>F)    
+sex                   0.05954 0.05954     1   54.98  1.5102 0.2243411    
+age                   0.07121 0.07121     1   55.04  1.8063 0.1844689    
+days_to_enrollment    0.00647 0.00647     1   55.02  0.1642 0.6869232    
+lesion_volume         0.01016 0.01016     1   55.18  0.2578 0.6136806    
+contra                0.22353 0.22353     1   77.41  5.6699 0.0197160 *  
+channel_region        1.15786 0.38595     3   15.99  9.7899 0.0006627 ***
+contra:channel_region 0.62011 0.20670     3 1060.77  5.2431 0.0013558 ** 
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1

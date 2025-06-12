@@ -1,0 +1,90 @@
+Linear mixed model fit by maximum likelihood . t-tests use Satterthwaite's method [lmerModLmerTest]
+Formula: CF ~ band * age.c * group * region + (1 | subID) + (1 | Channels)
+   Data: PEAK_BAND %>% filter(band != "delta")
+Control: lmerControl(optimizer = "bobyqa", optCtrl = list(maxfun = 5e+05))
+
+      AIC       BIC    logLik -2*log(L)  df.resid 
+  62872.8   63255.7  -31385.4   62770.8     13414 
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-3.7981 -0.3687  0.0137  0.4760  4.6921 
+
+Random effects:
+ Groups   Name        Variance Std.Dev.
+ subID    (Intercept) 0.935793 0.96736 
+ Channels (Intercept) 0.009436 0.09714 
+ Residual             5.922038 2.43352 
+Number of obs: 13465, groups:  subID, 295; Channels, 24
+
+Fixed effects:
+                                Estimate Std. Error         df t value Pr(>|t|)    
+(Intercept)                    1.169e+01  1.383e-01  6.437e+02  84.508  < 2e-16 ***
+band.L                         8.172e+00  1.865e-01  1.344e+04  43.818  < 2e-16 ***
+band.Q                         2.090e+00  1.210e-01  1.343e+04  17.266  < 2e-16 ***
+age.c                         -1.569e-01  6.047e-02  6.021e+02  -2.595  0.00969 ** 
+group.L                       -2.639e-01  1.932e-01  6.616e+02  -1.366  0.17241    
+region.L                      -1.765e-01  1.772e-01  1.602e+03  -0.996  0.31921    
+region.Q                       1.542e-01  1.788e-01  1.358e+03   0.863  0.38847    
+region.C                       3.185e-01  1.782e-01  1.119e+03   1.788  0.07411 .  
+band.L:age.c                  -4.978e-01  8.055e-02  1.334e+04  -6.180 6.61e-10 ***
+band.Q:age.c                  -7.516e-02  5.242e-02  1.343e+04  -1.434  0.15166    
+band.L:group.L                -3.111e-01  2.637e-01  1.344e+04  -1.180  0.23814    
+band.Q:group.L                -7.548e-02  1.711e-01  1.342e+04  -0.441  0.65919    
+age.c:group.L                 -4.172e-02  8.552e-02  6.021e+02  -0.488  0.62584    
+band.L:region.L               -7.336e-01  3.553e-01  1.326e+04  -2.064  0.03899 *  
+band.Q:region.L               -2.707e-01  2.263e-01  1.324e+04  -1.196  0.23160    
+band.L:region.Q               -8.591e-03  3.573e-01  1.334e+04  -0.024  0.98082    
+band.Q:region.Q                1.547e-01  2.308e-01  1.330e+04   0.671  0.50251    
+band.L:region.C                8.374e-01  3.521e-01  1.328e+04   2.378  0.01740 *  
+band.Q:region.C                4.380e-01  2.316e-01  1.327e+04   1.891  0.05862 .  
+age.c:region.L                -1.219e-02  7.430e-02  1.327e+04  -0.164  0.86962    
+age.c:region.Q                 2.427e-02  7.445e-02  1.331e+04   0.326  0.74441    
+age.c:region.C                 1.350e-02  7.421e-02  1.336e+04   0.182  0.85570    
+group.L:region.L              -1.062e-02  2.437e-01  1.327e+04  -0.044  0.96525    
+group.L:region.Q               8.044e-02  2.454e-01  1.332e+04   0.328  0.74304    
+group.L:region.C               1.359e-01  2.436e-01  1.329e+04   0.558  0.57704    
+band.L:age.c:group.L          -7.461e-03  1.139e-01  1.334e+04  -0.066  0.94777    
+band.Q:age.c:group.L          -2.867e-02  7.413e-02  1.343e+04  -0.387  0.69895    
+band.L:age.c:region.L          1.484e-01  1.526e-01  1.326e+04   0.973  0.33064    
+band.Q:age.c:region.L         -9.238e-03  9.863e-02  1.324e+04  -0.094  0.92538    
+band.L:age.c:region.Q         -2.508e-01  1.523e-01  1.333e+04  -1.646  0.09976 .  
+band.Q:age.c:region.Q          8.275e-03  1.006e-01  1.332e+04   0.082  0.93445    
+band.L:age.c:region.C         -1.643e-01  1.505e-01  1.336e+04  -1.092  0.27503    
+band.Q:age.c:region.C          6.052e-02  1.006e-01  1.328e+04   0.601  0.54764    
+band.L:group.L:region.L       -1.701e-01  5.024e-01  1.325e+04  -0.339  0.73496    
+band.Q:group.L:region.L       -1.025e-01  3.200e-01  1.324e+04  -0.320  0.74861    
+band.L:group.L:region.Q        7.135e-01  5.052e-01  1.334e+04   1.412  0.15787    
+band.Q:group.L:region.Q        1.601e-01  3.263e-01  1.330e+04   0.490  0.62379    
+band.L:group.L:region.C        7.233e-01  4.980e-01  1.328e+04   1.452  0.14639    
+band.Q:group.L:region.C        1.390e-01  3.275e-01  1.327e+04   0.425  0.67120    
+age.c:group.L:region.L         2.634e-02  1.051e-01  1.327e+04   0.251  0.80208    
+age.c:group.L:region.Q        -7.489e-02  1.053e-01  1.331e+04  -0.711  0.47690    
+age.c:group.L:region.C        -1.776e-02  1.049e-01  1.336e+04  -0.169  0.86564    
+band.L:age.c:group.L:region.L  9.521e-02  2.158e-01  1.325e+04   0.441  0.65903    
+band.Q:age.c:group.L:region.L  2.195e-02  1.395e-01  1.323e+04   0.157  0.87492    
+band.L:age.c:group.L:region.Q -2.115e-01  2.154e-01  1.332e+04  -0.982  0.32622    
+band.Q:age.c:group.L:region.Q -9.653e-02  1.423e-01  1.332e+04  -0.679  0.49745    
+band.L:age.c:group.L:region.C -2.649e-01  2.128e-01  1.336e+04  -1.245  0.21314    
+band.Q:age.c:group.L:region.C  4.718e-02  1.423e-01  1.328e+04   0.331  0.74029    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+Type III Analysis of Variance Table with Satterthwaite's method
+                         Sum Sq Mean Sq NumDF   DenDF   F value    Pr(>F)    
+band                    25235.3 12617.6     2 13420.2 2130.6222 < 2.2e-16 ***
+age.c                      39.9    39.9     1   602.1    6.7333  0.009693 ** 
+group                      11.0    11.0     1   661.6    1.8659  0.172414    
+region                     24.5     8.2     3  1177.3    1.3769  0.248270    
+band:age.c                390.4   195.2     2 13389.9   32.9601 5.257e-15 ***
+band:group                 17.9     8.9     2 13417.9    1.5077  0.221464    
+age.c:group                 1.4     1.4     1   602.1    0.2380  0.625840    
+band:region               173.0    28.8     6 13281.9    4.8675 5.631e-05 ***
+age.c:region                0.8     0.3     3 13315.2    0.0444  0.987567    
+group:region                1.9     0.6     3 13300.4    0.1048  0.957320    
+band:age.c:group            1.4     0.7     2 13387.6    0.1202  0.886710    
+band:age.c:region          31.1     5.2     6 13286.9    0.8743  0.512723    
+band:group:region          34.2     5.7     6 13279.2    0.9625  0.448879    
+age.c:group:region          3.6     1.2     3 13315.0    0.2004  0.896155    
+band:age.c:group:region    24.9     4.1     6 13284.9    0.7002  0.649488    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1

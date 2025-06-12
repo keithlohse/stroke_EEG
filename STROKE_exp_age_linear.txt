@@ -1,0 +1,120 @@
+Linear mixed model fit by maximum likelihood . t-tests use Satterthwaite's method [lmerModLmerTest]
+Formula: Imp_Exp ~ sex + days_to_enrollment.c + lesion_volume.c + bbt_affected.c *  
+    age.c * channel_region * contra + (1 + contra | subID) +      (1 | Channels)
+   Data: STROKE
+Control: lmerControl(optimizer = "bobyqa", optCtrl = list(maxfun = 5e+05))
+
+      AIC       BIC    logLik -2*log(L)  df.resid 
+    -71.2     113.1      75.6    -151.2       700 
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-4.5725 -0.5346 -0.0850  0.5249  5.0718 
+
+Random effects:
+ Groups   Name        Variance Std.Dev. Corr
+ subID    (Intercept) 0.089217 0.29869      
+          contra.L    0.002255 0.04749  0.17
+ Channels (Intercept) 0.004423 0.06650      
+ Residual             0.036739 0.19167      
+Number of obs: 740, groups:  subID, 37; Channels, 20
+
+Fixed effects:
+                                                 Estimate Std. Error         df t value Pr(>|t|)
+(Intercept)                                     1.151e+00  5.764e-02  4.367e+01  19.970  < 2e-16
+sex.L                                           1.127e-01  7.887e-02  3.699e+01   1.430 0.161246
+days_to_enrollment.c                           -8.397e-05  8.297e-05  3.698e+01  -1.012 0.318090
+lesion_volume.c                                -1.093e-03  2.220e-03  3.698e+01  -0.492 0.625316
+bbt_affected.c                                  1.112e-02  3.953e-03  3.745e+01   2.813 0.007781
+age.c                                          -5.568e-03  3.803e-03  3.742e+01  -1.464 0.151485
+channel_region.L                               -4.909e-02  4.063e-02  1.947e+01  -1.208 0.241453
+channel_region.Q                                1.571e-01  3.772e-02  1.947e+01   4.164 0.000504
+channel_region.C                               -5.838e-02  3.458e-02  1.947e+01  -1.688 0.107294
+contra.L                                        3.511e-02  1.426e-02  5.189e+01   2.463 0.017149
+bbt_affected.c:age.c                            1.048e-04  2.281e-04  3.742e+01   0.460 0.648477
+bbt_affected.c:channel_region.L                 7.540e-04  1.194e-03  6.476e+02   0.631 0.528074
+bbt_affected.c:channel_region.Q                 1.917e-03  1.109e-03  6.476e+02   1.729 0.084293
+bbt_affected.c:channel_region.C                -2.736e-04  1.016e-03  6.476e+02  -0.269 0.787839
+age.c:channel_region.L                          4.769e-03  1.259e-03  6.476e+02   3.788 0.000166
+age.c:channel_region.Q                          4.591e-04  1.169e-03  6.476e+02   0.393 0.694648
+age.c:channel_region.C                         -1.338e-03  1.071e-03  6.476e+02  -1.249 0.212294
+bbt_affected.c:contra.L                        -2.050e-04  9.973e-04  5.437e+01  -0.206 0.837879
+age.c:contra.L                                  7.005e-04  1.012e-03  5.195e+01   0.692 0.492083
+channel_region.L:contra.L                       4.811e-02  2.534e-02  6.541e+02   1.898 0.058111
+channel_region.Q:contra.L                      -3.217e-02  2.353e-02  6.541e+02  -1.367 0.172070
+channel_region.C:contra.L                       2.193e-03  2.157e-02  6.541e+02   0.102 0.919054
+bbt_affected.c:age.c:channel_region.L          -1.030e-04  7.534e-05  6.476e+02  -1.367 0.172105
+bbt_affected.c:age.c:channel_region.Q           1.712e-04  6.995e-05  6.476e+02   2.448 0.014643
+bbt_affected.c:age.c:channel_region.C          -3.301e-05  6.411e-05  6.476e+02  -0.515 0.606771
+bbt_affected.c:age.c:contra.L                  -6.271e-05  6.242e-05  5.388e+01  -1.005 0.319518
+bbt_affected.c:channel_region.L:contra.L        1.188e-03  1.781e-03  6.670e+02   0.667 0.505007
+bbt_affected.c:channel_region.Q:contra.L       -2.915e-03  1.653e-03  6.670e+02  -1.763 0.078344
+bbt_affected.c:channel_region.C:contra.L       -1.447e-03  1.515e-03  6.670e+02  -0.955 0.340042
+age.c:channel_region.L:contra.L                 1.425e-03  1.800e-03  6.546e+02   0.792 0.428743
+age.c:channel_region.Q:contra.L                 2.666e-03  1.671e-03  6.546e+02   1.595 0.111173
+age.c:channel_region.C:contra.L                -7.339e-04  1.532e-03  6.546e+02  -0.479 0.632034
+bbt_affected.c:age.c:channel_region.L:contra.L -1.206e-06  1.113e-04  6.663e+02  -0.011 0.991361
+bbt_affected.c:age.c:channel_region.Q:contra.L -1.323e-04  1.034e-04  6.663e+02  -1.280 0.201148
+bbt_affected.c:age.c:channel_region.C:contra.L -6.657e-06  9.475e-05  6.663e+02  -0.070 0.944008
+                                                  
+(Intercept)                                    ***
+sex.L                                             
+days_to_enrollment.c                              
+lesion_volume.c                                   
+bbt_affected.c                                 ** 
+age.c                                             
+channel_region.L                                  
+channel_region.Q                               ***
+channel_region.C                                  
+contra.L                                       *  
+bbt_affected.c:age.c                              
+bbt_affected.c:channel_region.L                   
+bbt_affected.c:channel_region.Q                .  
+bbt_affected.c:channel_region.C                   
+age.c:channel_region.L                         ***
+age.c:channel_region.Q                            
+age.c:channel_region.C                            
+bbt_affected.c:contra.L                           
+age.c:contra.L                                    
+channel_region.L:contra.L                      .  
+channel_region.Q:contra.L                         
+channel_region.C:contra.L                         
+bbt_affected.c:age.c:channel_region.L             
+bbt_affected.c:age.c:channel_region.Q          *  
+bbt_affected.c:age.c:channel_region.C             
+bbt_affected.c:age.c:contra.L                     
+bbt_affected.c:channel_region.L:contra.L          
+bbt_affected.c:channel_region.Q:contra.L       .  
+bbt_affected.c:channel_region.C:contra.L          
+age.c:channel_region.L:contra.L                   
+age.c:channel_region.Q:contra.L                   
+age.c:channel_region.C:contra.L                   
+bbt_affected.c:age.c:channel_region.L:contra.L    
+bbt_affected.c:age.c:channel_region.Q:contra.L    
+bbt_affected.c:age.c:channel_region.C:contra.L    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+fit warnings:
+Some predictor variables are on very different scales: consider rescaling
+Type III Analysis of Variance Table with Satterthwaite's method
+                                            Sum Sq Mean Sq NumDF  DenDF F value    Pr(>F)    
+sex                                        0.07508 0.07508     1  36.99  2.0435 0.1612460    
+days_to_enrollment.c                       0.03763 0.03763     1  36.98  1.0243 0.3180900    
+lesion_volume.c                            0.00891 0.00891     1  36.98  0.2425 0.6253160    
+bbt_affected.c                             0.29062 0.29062     1  37.45  7.9106 0.0077811 ** 
+age.c                                      0.07877 0.07877     1  37.42  2.1440 0.1514846    
+channel_region                             1.35954 0.45318     3  19.47 12.3352 9.534e-05 ***
+contra                                     0.22280 0.22280     1  51.89  6.0646 0.0171489 *  
+bbt_affected.c:age.c                       0.00776 0.00776     1  37.42  0.2112 0.6484766    
+bbt_affected.c:channel_region              0.13432 0.04477     3 647.59  1.2187 0.3020012    
+age.c:channel_region                       0.66354 0.22118     3 647.59  6.0204 0.0004774 ***
+bbt_affected.c:contra                      0.00155 0.00155     1  54.37  0.0423 0.8378793    
+age.c:contra                               0.01759 0.01759     1  51.95  0.4787 0.4920830    
+channel_region:contra                      0.34871 0.11624     3 654.06  3.1639 0.0240820 *  
+bbt_affected.c:age.c:channel_region        0.53321 0.17774     3 647.59  4.8378 0.0024490 ** 
+bbt_affected.c:age.c:contra                0.03709 0.03709     1  53.88  1.0095 0.3195178    
+bbt_affected.c:channel_region:contra       0.20883 0.06961     3 667.02  1.8947 0.1291390    
+age.c:channel_region:contra                0.13019 0.04340     3 654.63  1.1812 0.3160275    
+bbt_affected.c:age.c:channel_region:contra 0.07590 0.02530     3 666.30  0.6886 0.5591791    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1

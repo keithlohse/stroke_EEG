@@ -1,0 +1,49 @@
+Linear mixed model fit by maximum likelihood . t-tests use Satterthwaite's method [lmerModLmerTest]
+Formula: sqrt(peak_count + 1) ~ age.c * group * region + (1 | subID) +      (1 | Channels)
+   Data: PEAK_COUNT
+
+      AIC       BIC    logLik -2*log(L)  df.resid 
+   2286.5    2417.0   -1124.3    2248.5      7061 
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-4.6393 -0.4603  0.0225  0.6193  3.6278 
+
+Random effects:
+ Groups   Name        Variance Std.Dev.
+ subID    (Intercept) 0.048548 0.22034 
+ Channels (Intercept) 0.001904 0.04364 
+ Residual             0.070895 0.26626 
+Number of obs: 7080, groups:  subID, 295; Channels, 24
+
+Fixed effects:
+                         Estimate Std. Error         df t value Pr(>|t|)    
+(Intercept)             1.579e+00  2.590e-02  2.843e+02  60.966  < 2e-16 ***
+age.c                  -2.572e-02  1.087e-02  3.011e+02  -2.366  0.01863 *  
+group.L                -1.623e-01  3.398e-02  3.011e+02  -4.776 2.79e-06 ***
+region.L               -2.894e-03  2.417e-02  3.711e+01  -0.120  0.90534    
+region.Q               -2.048e-02  2.301e-02  3.711e+01  -0.890  0.37917    
+region.C                1.675e-02  2.179e-02  3.711e+01   0.769  0.44691    
+age.c:group.L           4.011e-02  1.538e-02  3.011e+02   2.608  0.00955 ** 
+age.c:region.L          1.001e-02  5.914e-03  6.762e+03   1.693  0.09046 .  
+age.c:region.Q         -2.810e-03  5.631e-03  6.762e+03  -0.499  0.61781    
+age.c:region.C         -2.827e-03  5.332e-03  6.762e+03  -0.530  0.59596    
+group.L:region.L       -2.084e-02  1.848e-02  6.762e+03  -1.128  0.25942    
+group.L:region.Q       -1.862e-02  1.760e-02  6.762e+03  -1.058  0.29012    
+group.L:region.C        4.818e-03  1.666e-02  6.762e+03   0.289  0.77249    
+age.c:group.L:region.L  1.843e-02  8.364e-03  6.762e+03   2.203  0.02763 *  
+age.c:group.L:region.Q -6.421e-03  7.963e-03  6.762e+03  -0.806  0.42007    
+age.c:group.L:region.C  4.950e-04  7.541e-03  6.762e+03   0.066  0.94766    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+Type III Analysis of Variance Table with Satterthwaite's method
+                    Sum Sq Mean Sq NumDF  DenDF F value    Pr(>F)    
+age.c              0.39679 0.39679     1  301.1  5.5968  0.018626 *  
+group              1.61735 1.61735     1  301.1 22.8134 2.793e-06 ***
+region             0.13051 0.04350     3   37.1  0.6136  0.610484    
+age.c:group        0.48234 0.48234     1  301.1  6.8036  0.009552 ** 
+age.c:region       0.30491 0.10164     3 6761.9  1.4336  0.230852    
+group:region       0.14944 0.04981     3 6761.9  0.7026  0.550354    
+age.c:group:region 0.53577 0.17859     3 6761.9  2.5191  0.056199 .  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
