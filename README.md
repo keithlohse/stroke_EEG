@@ -13,11 +13,11 @@ In brief, the repository contains 5 scripts:
 
 3. A script for imputing exponents and offsets in the control data using mulitple imputation.
    - Note that periodic components were not included.
-   - Note that unimputed exponents and offsets were ultimately used in the analyses as mixed-effect models can flexibly handle missing data (imputation was performed in exploration of the data).
+   
 
 4. A script for imputing exponents and offsets in the data from people with stroke using multiple imputaiton.
    - Note that periodic components were not included.
-   - Note that unimputed exponents and offsets were ultimately used in the analyses as mixed-effect models can flexibly handle missing data (imputation was performed in exploration of the data).
+   
 
 5. A statistical analysis script that contains all of the analyses conducted and reported in our paper.
    - Comparisons between EEG data for people with stroke and health controls.
